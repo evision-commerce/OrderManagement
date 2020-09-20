@@ -13,7 +13,8 @@ Follow these steps to get your development enviornment set up:
 * Uniconta
 
 # Task Requirements
-This application comes with basic datacess methods, models
+This application comes with basic datacess methods, models.
+
 Complete the application by creating two Main pages
 1. eShop Sales order Grid page (where it should show sales order header data) and with following features 
 * Edit(clicking on edit should lead to edit page where user can inspect the data and perform actions like accept or decline the eorder)
