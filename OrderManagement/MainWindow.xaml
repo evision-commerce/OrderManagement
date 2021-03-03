@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderManagement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ContentControl Grid.Column="0" Grid.Row="0"/>
-    </Grid>
+        Title="MainWindow" Height="450" Width="800"  Loaded="Window_Loaded">
+    <DockPanel>
+        <Frame Name="ParentFrame"/>
+        <!--Change the page type from the app.config-->
+    </DockPanel>
 </Window>

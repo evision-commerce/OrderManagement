@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OrderManagement.Pages.EshopSalesOrder;
+using OrderManagement.Pages;
+using OrderManagement.Pages.SalesOrder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +13,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OrderManagement
@@ -23,12 +25,22 @@ namespace OrderManagement
         public MainWindow()
         {
             InitializeComponent();
-            InitializeCore();
         }
 
-        private async void InitializeCore()
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            App.ParentWindow = this;
             await Core.InitializeCore(Helpers.UserName, Helpers.PassWord, Helpers.AccessToken, Helpers.CompanyId);
+
+            if (Helpers.OrderType.Equals("EshopOrders"))
+            {
+                this.ParentFrame.Navigate(new EshopOrders());
+            }
+            else
+            {
+                this.ParentFrame.Navigate(new SalesOrders());
+            }
+            //this.ParentFrame.Navigate(new SalesOrders());
         }
     }
 }

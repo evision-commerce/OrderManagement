@@ -23,5 +23,6 @@ namespace evision.Etrade5.Models.UnicontaExtensions
             get { return ((GetUserField("eShopShopId") != null) ? GetUserField("eShopShopId").ToString() : ""); }
             set { this.SetUserField("eShopShopId", value); }
         }
+     
     }
 }
