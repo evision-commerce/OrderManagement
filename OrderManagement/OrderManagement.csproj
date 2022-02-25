@@ -37,15 +37,12 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Mvvm.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
-    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    <Reference Include="Renci.SshNet, Version=2020.0.1.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.1\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -65,17 +62,17 @@
     </Reference>
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
-    <Reference Include="Uniconta.Common, Version=1.0.7563.19068, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Uniconta.Common.1.1.86\lib\net461\Uniconta.Common.dll</HintPath>
+    <Reference Include="Uniconta.Common, Version=1.0.8004.19459, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Uniconta.Common.1.1.88.6\lib\net461\Uniconta.Common.dll</HintPath>
     </Reference>
     <Reference Include="Uniconta.WindowsAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Uniconta.WindowsAPI.1.1.86\lib\net461\Uniconta.WindowsAPI.dll</HintPath>
+      <HintPath>..\packages\Uniconta.WindowsAPI.1.1.88.6\lib\net461\Uniconta.WindowsAPI.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WPFToolkit.Extended">
-      <HintPath>..\..\..\..\WPFAPPDEMO\UNICONDA Source From Site\PluginPageSample\WPFToolkit.Extended.dll</HintPath>
+    <Reference Include="WPFToolkit">
+      <HintPath>..\..\..\Users\Bertram Paaskesen\AppData\Local\Apps\2.0\52X0RVYY.YKR\9K672H82.1Q7\unic..tion_8eb49bc013a389a4_0001.0000_bca50951980302e6\WPFToolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,28 +83,10 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrderTypeSelectionWindow.xaml.cs">
-      <DependentUpon>OrderTypeSelectionWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EshopSalesOrder\EshopOrders.xaml.cs">
-      <DependentUpon>EshopOrders.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Exceptions\SalesOrderHeaderException.cs" />
     <Compile Include="Exceptions\SalesOrderLinesException.cs" />
     <Compile Include="Models\SalesOrderClientModel.cs" />
     <Compile Include="Models\SalesOrderLineClientModel.cs" />
-    <Compile Include="Pages\EshopSalesOrder\EshopSalesOrderHeaders.xaml.cs">
-      <DependentUpon>EshopSalesOrderHeaders.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EshopSalesOrder\EShopSalesOrderLines.xaml.cs">
-      <DependentUpon>EShopSalesOrderLines.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SalesOrder\SalesOrdersLines.xaml.cs">
-      <DependentUpon>SalesOrdersLines.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SalesOrder\SalesOrders.xaml.cs">
-      <DependentUpon>SalesOrders.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -134,7 +113,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -149,9 +127,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DC\API\OIOUBL\Classes to export\Resources\OIOUBL_Invoice_Schematron.xsl" />
-  </ItemGroup>
-  <ItemGroup>
+    <Folder Include="StylesAndTemplates\Img\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
   </ItemGroup>
@@ -160,45 +136,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OrderTypeSelectionWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SalesOrder\SalesOrdersLines.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="StylesAndTemplates\ControlStylesAndTemplates.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\EshopSalesOrder\EshopOrders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\EshopSalesOrder\EshopSalesOrderHeaders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\EshopSalesOrder\EShopSalesOrderLines.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SalesOrder\SalesOrders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="StylesAndTemplates\Img\up.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="StylesAndTemplates\Img\close.png" />
-    <Resource Include="StylesAndTemplates\Img\close_.png" />
-    <Resource Include="StylesAndTemplates\Img\tick.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="StylesAndTemplates\Img\tick_.png" />
+    <Resource Include="DC\API\OIOUBL\Classes to export\Resources\OIOUBL_Invoice_Schematron.xsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

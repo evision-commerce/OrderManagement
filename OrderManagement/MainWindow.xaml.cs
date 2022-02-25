@@ -1,7 +1,4 @@
-﻿using OrderManagement.Pages.EshopSalesOrder;
-using OrderManagement.Pages;
-using OrderManagement.Pages.SalesOrder;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,11 +31,11 @@ namespace OrderManagement
 
             if (Helpers.OrderType.Equals("EshopOrders"))
             {
-                this.ParentFrame.Navigate(new EshopOrders());
+               // this.ParentFrame.Navigate(new EshopOrders());
             }
             else
             {
-                this.ParentFrame.Navigate(new SalesOrders());
+               // this.ParentFrame.Navigate(new SalesOrders());
             }
             //this.ParentFrame.Navigate(new SalesOrders());
         }

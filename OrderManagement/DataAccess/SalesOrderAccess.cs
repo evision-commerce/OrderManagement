@@ -367,12 +367,7 @@ namespace OrderManagement.DataAccess
                     _Lines = int.TryParse(eshopSalesOrderHeader.Lines.ToString(), out int line) ? line : 0,
                     _DeliveryDate = eshopSalesOrderHeader.DeliveryDate,
 
-
-                   // eShopSalesNumber = eshopSalesOrderHeader?.eSalesNumber,
-                    //eShopPaymentId = eshopSalesOrderHeader?.PaymentId,
-                    //eShopShopId = eshopSalesOrderHeader?.ShopId
                 };
-
             }
             catch (Exception e)
             {
@@ -404,7 +399,6 @@ namespace OrderManagement.DataAccess
                     _Note = eshopSalesOrderLines?.LineNote,
                     _OrderNumber = int.TryParse(eshopSalesOrderLines?.eSalesNumber, out int orderNumber) ? orderNumber : 0,
                 };
-
             }
             catch (Exception e)
             {
