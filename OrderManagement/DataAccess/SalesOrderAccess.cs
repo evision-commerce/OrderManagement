@@ -30,6 +30,7 @@ namespace OrderManagement.DataAccess
 
         public static IEnumerable<EshopSalesOrderHeader> GetEshopSalesOrderHeaders()
         {
+           
             EshopSalesOrderHeader[] result = null;
             try
             {
@@ -67,7 +68,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.CAPI.Insert(eshopSalesOrderHeaders).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -82,7 +83,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.CAPI.Insert(eshopSalesOrderLines).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -90,7 +91,6 @@ namespace OrderManagement.DataAccess
             return result;
         }
 
-        //##--------------------------- Etra Added By Phases Dev Team ----------------------------------------##
 
         /// <summary>
         /// For deleting Eshop SalesOrder Header
@@ -104,7 +104,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.CAPI.Delete(eshopSalesOrderHeader).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -124,7 +124,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.CAPI.Update(eshopSalesOrderHeader).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -142,7 +142,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.QAPI.Query<EshopSalesOrderHeader>(Utils.CRIT.Add("Satus", 1).ValuePairs).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO logging
                 throw;
@@ -164,7 +164,7 @@ namespace OrderManagement.DataAccess
                 var data = Core.QAPI.Query<DebtorOrderClientModel>(Utils.CRIT.Add("OrderNumber", "0").ValuePairs).Result;
                 result = Core.CAPI.Delete(data).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -199,7 +199,7 @@ namespace OrderManagement.DataAccess
 
                 //result = Core.CAPI.Insert(eshopSalesOrderHeaders).Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -220,7 +220,7 @@ namespace OrderManagement.DataAccess
                     result = Core.CAPI.Insert(eshopSalesOrderLine).Result;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -258,7 +258,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.QAPI.Query<DebtorOrderClientModel>().Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO logging
                 throw;
@@ -276,7 +276,7 @@ namespace OrderManagement.DataAccess
             {
                 result = Core.QAPI.Query<DebtorOrderLineClientModel>().Result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO logging
                 throw;
@@ -309,7 +309,7 @@ namespace OrderManagement.DataAccess
 
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -333,7 +333,7 @@ namespace OrderManagement.DataAccess
                     result = Core.CAPI.Insert(debtorOrderLineClientModel).Result;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -369,7 +369,7 @@ namespace OrderManagement.DataAccess
 
                 };
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -400,14 +400,12 @@ namespace OrderManagement.DataAccess
                     _OrderNumber = int.TryParse(eshopSalesOrderLines?.eSalesNumber, out int orderNumber) ? orderNumber : 0,
                 };
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
 
             return result;
         }
-
-        //---------------------------End----------------------------------------------
     }
 }
