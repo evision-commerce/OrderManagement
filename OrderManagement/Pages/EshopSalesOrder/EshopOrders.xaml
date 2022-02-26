@@ -1,0 +1,124 @@
+﻿<Page x:Class="OrderManagement.Pages.EshopSalesOrder.EshopOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderManagement"
+        xmlns:xCtrl="http://schemas.xceed.com/wpf/xaml/toolkit"
+        d:DesignHeight="300" d:DesignWidth="300"
+        mc:Ignorable="d"
+        Title="Eshop Orders" Height="Auto" Width="Auto">
+    <Grid>
+        <!--<ContentControl Grid.Column="0" Grid.Row="0"/>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <xCtrl:BusyIndicator x:Name="busyIndicator" Grid.Row="0">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    
+                    <DataGridTextColumn MinWidth="100"   Binding="{Binding .eSalesNumber}" Header="eSalesNumber" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding SalesNumber}" Header="SalesNumber" Width="*" IsReadOnly="True" />
+                    <DataGridTemplateColumn MinWidth="100"  Header="Status Text" Width="*" IsReadOnly="True" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="1">
+                                                    <Setter Property="Text" Value="Accepted" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value ="5">
+                                                    <Setter Property="Text" Value="Pending" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value ="0">
+                                                    <Setter Property="Text" Value="Pending" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Status}" Header="Status Code" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding CustAccount}" Header="CustAccount" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding ContactId}" Header="ContactId" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding ProfileID}" Header="ProfileID" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding ShopId}" Header="ShopId" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding PriceGroup}" Header="PriceGroup" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding WareHouse}" Header="WareHouse" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding DiscGroup}" Header="DiscGroup" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Currency}" Header="Currency" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding PaymentId}" Header="PaymentId" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Payment}" Header="Payment" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding DeliveryMode}" Header="DeliveryMode" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding VatCode}" Header="VatCode" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding CreateDate}" Header="CreateDate" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Requisition}" Header="Requisition" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding EREFERENCENUMBER}" Header="EREFERENCENUMBER" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding LastChanged}" Header="LastChanged" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Name}" Header="Name" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Debtoratt}" Header="Debtoratt" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Address1}" Header="Address1" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Address2}" Header="Address2" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Address3}" Header="Address3" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding zipcode}" Header="Zipcode" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding region}" Header="Region" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Country}" Header="Country" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Phone}" Header="Phone" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Email}" Header="Email" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding dlvName}" Header="Delivery Name" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding DeliveryAtt}" Header="Delivery Att" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding dlvAddress1}" Header="Delivery Address 1" Width="0.5*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding dlvAddress2}" Header="Delivery Address 2" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding dlvzipcode}" Header="Delivery Zip code" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding dlvAddress3}" Header="Address 3" Width="0.5*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding dlvCountry}" Header="Delivery Country" Width="0.5*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding PaymentText}" Header="Payment Text" Width="0.5*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding DeliveryText}" Header="Delivery Text" Width="0.5*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding PriceInclVat}" Header="Price Incl Vat" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Delivery}" Header="Delivery" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding SUBTOTALAMOUNT}" Header="SUB TOTAL AMOUNT" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding VatAmount}" Header="Vat Amount" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding InvoiceAmount}" Header="Invoice Amount" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Lines}" Header="Lines" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding eshop}" Header="Eshop" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding DeliveryDate}" Header="Delivery Date" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding ErrorStatus}" Header="Error Status" Width="*" IsReadOnly="True" />
+
+                    <DataGridTemplateColumn MinWidth="80" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="EditEShopOrder" Width="60" Height="24" Tag="{Binding eSalesNumber}">Edit</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn MinWidth="80" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="LinesEShopOrder" Width="60" Height="24" Tag="{Binding eSalesNumber}">Lines</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </xCtrl:BusyIndicator>
+        <Border Grid.Row="1" Style="{StaticResource SubMenuStyle}" Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!--<Border Grid.Column="0" CornerRadius="10" Background="{StaticResource SubMenuRectangleBackgroundColorGradient}">-->
+                <Button x:Name="AcceptOrders" Margin="3 0 0 0"  Grid.Column="0"  HorizontalAlignment="Center"   Content="Transfer Accpeted Orders" Template="{StaticResource ButtonFilterTemplate}" Click="AcceptOrders_Click"  />
+                <!--</Border>-->
+                <!--<TextBlock Margin="3 0 3 0" VerticalAlignment="Center" Grid.Column="1"  Text="Transfer Accpeted Orders" />-->
+                <!--<Rectangle Width=".6"  VerticalAlignment="Stretch" Fill="Black"  Grid.Column="2" />-->
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

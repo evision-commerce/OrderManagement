@@ -1,0 +1,63 @@
+﻿<Page x:Class="OrderManagement.Pages.SalesOrder.SalesOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderManagement.Pages.SalesOrder"
+        xmlns:xCtrl="http://schemas.xceed.com/wpf/xaml/toolkit"
+        d:DesignHeight="300" d:DesignWidth="300"
+        mc:Ignorable="d"
+        Title="Sales Orders" Height="Auto" Width="Auto">
+    <Grid>
+        <!--<ContentControl Grid.Column="0" Grid.Row="0"/>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <xCtrl:BusyIndicator x:Name="busyIndicator" Grid.Row="0">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    
+                    <DataGridTextColumn MinWidth="100"   Binding="{Binding OrderNumber}" Header="OrderNumber" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding InvoiceAccount}" Header="InvoiceAccount" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Volume}" Header="Volume" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding Name}" Header="Name" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding eShopSalesNumber}" Header="eShopSalesNumber" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="100"  Binding="{Binding eShopPaymentId}" Header="eShopPaymentId" Width="*" IsReadOnly="True" />
+
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding eShopShopId}" Header="eShopShopId" Width="*" IsReadOnly="True" />
+
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding CustomsNo}" Header="CustomsNo" Width="*" IsReadOnly="True" />
+
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding InvoiceAccount}" Header="InvoiceAccount" Width="*" IsReadOnly="True" />
+
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding GroupName}" Header="Volume" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding Group}" Header="InvoiceInterval" Width="*" IsReadOnly="True" />
+
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding Weight}" Header="Weight" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding Group}" Header="Group" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding CountryName}" Header="CountryName" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding SalesValue}" Header="SalesValue" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding CurBalance}" Header="CurBalance" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding Margin}" Header="Margin" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding InvoiceEmail}" Header="InvoiceEmail" Width="*" IsReadOnly="True" />
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding InvoiceInterval}" Header="InvoiceInterval" Width="*" IsReadOnly="True" />
+
+                    <DataGridTextColumn MinWidth="80"  Binding="{Binding Account}" Header="Account" Width="*" IsReadOnly="True" />
+                    
+                    <DataGridTemplateColumn MinWidth="80" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="LinesSalesOrder" Tag="{Binding OrderNumber}" Width="70">Lines</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </xCtrl:BusyIndicator>
+        
+    </Grid>
+</Page>
